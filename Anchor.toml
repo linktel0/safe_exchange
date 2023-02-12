@@ -2,7 +2,7 @@
 seeds = false
 skip-lint = false
 [programs.localnet]
-safe_exchange = "DT6vGdjj2GKHJEnheWLaS1PKSoc7hwMSp5CmnPVUt6jC"
+safe_exchange = "9Vfg3sFgXTH79HfUaQDsT4vnXTVvPhJcXcmbnd1VzYV9"
 
 [registry]
 url = "https://api.apr.dev"
