@@ -134,7 +134,8 @@ pub mod safe_exchange {
         Ok(())
     }
 
-    pub fn cancel_token_token(ctx: Context<CancelTokenToken>,exchange_idx: u64) -> Result<()> {
+    
+    pub fn cancel_token_sol(ctx: Context<CancelTokenSol>,exchange_idx: u64) -> Result<()> {
         
         let amount = ctx.accounts.exchange_state.initializer_amount;
         let bump = *ctx.bumps.get("exchange_state").unwrap();
@@ -143,7 +144,6 @@ pub mod safe_exchange {
         let seed2 = ctx.accounts.initializer.key(); 
         let seed3 = ctx.accounts.initializer_mint.key();
         let seed4 = ctx.accounts.taker.key();
-        let seed5 = ctx.accounts.taker_mint.key();
         let seed6 = [bump];
 
         let inner = vec![
@@ -152,7 +152,6 @@ pub mod safe_exchange {
             seed2.as_ref(),
             seed3.as_ref(),
             seed4.as_ref(),
-            seed5.as_ref(),
             seed6.as_ref()
         ];
 
@@ -184,8 +183,8 @@ pub mod safe_exchange {
 
         Ok(())
     }
-   
-    pub fn cancel_token_sol(ctx: Context<CancelTokenSol>,exchange_idx: u64) -> Result<()> {
+
+    pub fn cancel_token_token(ctx: Context<CancelTokenToken>,exchange_idx: u64) -> Result<()> {
         
         let amount = ctx.accounts.exchange_state.initializer_amount;
         let bump = *ctx.bumps.get("exchange_state").unwrap();
@@ -194,6 +193,7 @@ pub mod safe_exchange {
         let seed2 = ctx.accounts.initializer.key(); 
         let seed3 = ctx.accounts.initializer_mint.key();
         let seed4 = ctx.accounts.taker.key();
+        let seed5 = ctx.accounts.taker_mint.key();
         let seed6 = [bump];
 
         let inner = vec![
@@ -202,6 +202,7 @@ pub mod safe_exchange {
             seed2.as_ref(),
             seed3.as_ref(),
             seed4.as_ref(),
+            seed5.as_ref(),
             seed6.as_ref()
         ];
 
